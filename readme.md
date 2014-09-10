@@ -37,3 +37,4 @@ v2
 - syntax highlighting w/ language select
 - delete embarrassing pastes
 - expiring pastes
+- testing
