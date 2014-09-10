@@ -38,3 +38,4 @@ v2
 - delete embarrassing pastes
 - expiring pastes
 - testing
+- versioned pastes
