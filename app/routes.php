@@ -16,3 +16,7 @@ Route::get('/', 'PastesController@index');
 Route::get('/paste/{id}', 'PastesController@show');
 
 Route::post('/new', 'PastesController@create');
+
+Route::get('/register', 'UsersController@register');
+Route::post('/users/new', 'UsersController@create');
+Route::get('/users/{id}', 'UsersController@show');
