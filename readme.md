@@ -4,9 +4,15 @@ Requirements:
 
 - Git
 - PHP 5.4 (for the server and for the command line)
-- mcrypt (brew install mcrypt)
-- Composer https://getcomposer.org/doc/00-intro.md#globally (run composer install after cloning the repository)
+- install mcrypt (brew install mcrypt)
+- install Composer https://getcomposer.org/doc/00-intro.md#globally (run composer install after cloning the repository)
+- install bower (brew install node && npm install bower)
+
 - database and credentials to match app/config/local/database.php
+
+- composer update
+- bower install
+- php artisan migrate
 
 Form
 Edit Form
