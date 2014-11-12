@@ -13,6 +13,8 @@
 
 Route::get('/', 'PastesController@index');
 
+Route::get('/recent', 'PastesController@recent');
+
 Route::get('/paste/{id}', 'PastesController@show');
 
 Route::post('/new', 'PastesController@create');

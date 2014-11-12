@@ -14,18 +14,27 @@ class PastesController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
+  public $layout = 'layouts.master';
 
 	public function index()
 	{
 		$pastes = Paste::orderBy('created_at','desc')->take(5)->get();
-		return View::make('index',array('pastes' => $pastes));
+		$this->layout->content = View::make('index',array('pastes' => $pastes));
 	}
 	public function show($id)
 	{
+		$pastes = Paste::orderBy('created_at','desc')->take(5)->get();
 		$paste = Paste::find($id);
 
-		return View::make('show',array('paste' => $paste));
+    $this->layout->content = View::make('show',array(
+      'paste' => $paste,
+      'pastes' => $pastes
+    ));
 	}
+  public function recent() {
+		$pastes = Paste::orderBy('created_at','desc')->take(20)->get();
+		$this->layout->content = View::make('recent',array('pastes' => $pastes));
+  }
 	public function create()
 	{
 		$paste = new Paste;
