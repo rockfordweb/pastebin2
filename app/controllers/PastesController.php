@@ -40,6 +40,7 @@ class PastesController extends BaseController {
 		$paste = new Paste;
 		$paste->title = Input::get('title');
 		$paste->content = Input::get('content');
+		$paste->syntax = Input::get('syntax');
 		$paste->save();
 		return Redirect::to('/paste/'.$paste->id);
 	}

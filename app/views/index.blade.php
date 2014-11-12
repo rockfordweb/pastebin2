@@ -11,9 +11,15 @@
     </div>
     <div>
       <label>Content</label><br>
-        {{ Form::textarea('content') }}
-      </div>
-      <div>{{ Form::submit('Create') }}</div>
+      {{ Form::textarea('content') }}
+    </div>
+    <div>
+      <label>Syntax</label><br>
+      {{ Form::select('syntax', array('php' => 'PHP', 'javascript' => 'JavaScript', 'css' => 'CSS')) }}
+    </div>
+
+    <br><br>
+    <div>{{ Form::submit('Create') }}</div>
   {{ Form::close() }}
   </div>
 

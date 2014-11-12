@@ -5,7 +5,7 @@
 <h2>{{{ $paste->title }}}</h2>
 <p>Pasted on {{{ $paste->created_at }}}</p>
 <div>
-	<pre>{{{ $paste->content }}}</pre>
+	<pre><code class="language-{{{ $paste->syntax }}}">{{{ $paste->content }}}</code></pre>
 </div>
 
 @stop

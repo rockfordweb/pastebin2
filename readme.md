@@ -47,3 +47,8 @@ v2
 - expiring pastes
 - testing
 - versioned pastes
+
+v3_FINAL
+
+- user functionality (private/public pastes, signin/signout/password controller)
+- search -- potential searches include by syntax type, title, content, user, by date
