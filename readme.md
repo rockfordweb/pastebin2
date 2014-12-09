@@ -12,6 +12,7 @@ Requirements:
 
 - composer update
 - bower install
+- bower install boostrap -S (make sure the bower_components folder is in /public/)
 - php artisan migrate
 
 Form
