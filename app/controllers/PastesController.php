@@ -26,10 +26,10 @@ class PastesController extends BaseController {
 		$pastes = Paste::orderBy('created_at','desc')->take(5)->get();
 		$paste = Paste::find($id);
 
-    $this->layout->content = View::make('show',array(
-      'paste' => $paste,
-      'pastes' => $pastes
-    ));
+	    $this->layout->content = View::make('show',array(
+	      'paste' => $paste,
+	      'pastes' => $pastes
+	    ));
 	}
   public function recent() {
 		$pastes = Paste::orderBy('created_at','desc')->take(20)->get();
