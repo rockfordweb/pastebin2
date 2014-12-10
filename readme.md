@@ -6,7 +6,7 @@ Requirements:
 - PHP 5.4 (for the server and for the command line)
 - install mcrypt (brew install mcrypt)
 - install Composer https://getcomposer.org/doc/00-intro.md#globally (run composer install after cloning the repository)
-- install bower (brew install node && npm install bower)
+- install bower (brew install node && npm install bower) or update your bower if it's old
 
 - database and credentials to match app/config/local/database.php
 
@@ -43,10 +43,12 @@ Task List:
 v2
 
 - users/logins
-- rate bad pastes
-- css
-- comment/insult all the javascripts, especially backbone
+- css preprocessing
 - public/private
+
+- rate bad pastes
+- comment/insult all the javascripts, especially backbone
+
 - blade layout
 - syntax highlighting w/ language select
 - delete embarrassing pastes
