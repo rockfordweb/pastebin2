@@ -23,7 +23,10 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '127.0.0.1',
+<<<<<<< HEAD
 			'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+=======
+>>>>>>> 855bff1c3521c17cbc6dc0317df69f5a826a189e
 			'database'  => 'pastebin',
 			'username'  => 'root',
 			'password'  => 'root',
