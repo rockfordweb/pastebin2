@@ -19,7 +19,9 @@
     </div>
 
     <br><br>
-    <div>{{ Form::submit('Create') }}</div>
+
+    {{ Form::hidden('id')}}
+    <div>{{ Form::submit('Save') }}</div>
   {{ Form::close() }}
   </div>
 

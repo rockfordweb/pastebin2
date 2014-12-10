@@ -37,19 +37,25 @@ class PastesController extends BaseController {
   }
 	public function create()
 	{
-		$paste = new Paste;
+		$status = 'new';
+		if (Input::get('id')) {
+			$status = 'update';
+			$paste = Paste::find(Input::get('id'));
+		} else {
+			$paste = new Paste;	
+		}
+		
 		$paste->title = Input::get('title');
 		$paste->content = Input::get('content');
 		$paste->syntax = Input::get('syntax');
 		$paste->save();
+
 		if (Request::ajax())
 		{
-			return Response::json(array('url' => '/paste/'.$paste->id, 'title' => $paste->title));  
+			return Response::json(array('id' => $paste->id, 'url' => '/paste/'.$paste->id, 'title' => $paste->title, 'status' => $status));  
 		}
 		
-		return Redirect::to('/paste/'.$paste->id);	
-		
-		
+		return Redirect::to('/paste/'.$paste->id);
 	}
 
 }

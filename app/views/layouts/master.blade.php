@@ -9,6 +9,7 @@
 
     {{HTML::style('/bower_components/bootstrap/dist/css/bootstrap.min.css')}}
     {{HTML::style('/bower_components/prism/themes/prism-funky.css')}}
+    {{HTML::style('/css/style.css')}}
   </head>
   <body>
     <div class="alert-container">
