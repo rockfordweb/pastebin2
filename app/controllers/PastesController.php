@@ -42,7 +42,14 @@ class PastesController extends BaseController {
 		$paste->content = Input::get('content');
 		$paste->syntax = Input::get('syntax');
 		$paste->save();
-		return Redirect::to('/paste/'.$paste->id);
+		if (Request::ajax())
+		{
+			return Response::json(array('url' => '/paste/'.$paste->id, 'title' => $paste->title));  
+		}
+		
+		return Redirect::to('/paste/'.$paste->id);	
+		
+		
 	}
 
 }

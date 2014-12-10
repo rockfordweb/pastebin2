@@ -11,6 +11,9 @@
     {{HTML::style('/bower_components/prism/themes/prism-funky.css')}}
   </head>
   <body>
+    <div class="alert-container">
+
+    </div>
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,6 +26,7 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
+      
       <div class="main row">
         <div class="content col-xs-8">
           @yield('content')
@@ -36,5 +40,6 @@
     {{HTML::script('/bower_components/jquery/dist/jquery.min.js')}}
     {{HTML::script('/bower_components/bootstrap/dist/js/bootstrap.min.js')}}
     {{HTML::script('/bower_components/prism/prism.js')}}
+    {{HTML::script('/js/main.js')}}
   </body>
 </html>

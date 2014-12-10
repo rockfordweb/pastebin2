@@ -4,7 +4,7 @@
 
   <h2>Create a paste!</h2>
   <div>
-  {{ Form::open(array('url' => '/new')) }}
+  {{ Form::open(array('url' => '/new','class' => 'pasteform')) }}
     <div>
       <label>Title</label><br>
       {{ Form::text('title') }}
