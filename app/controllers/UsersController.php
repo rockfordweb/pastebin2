@@ -21,7 +21,7 @@ class UsersController extends BaseController {
     $this->layout->content = View::make('register');
   }
 
-  public function create()
+  public function registerPOST()
   {
     $user = new User;
     $password = Input::get('password');
@@ -40,6 +40,22 @@ class UsersController extends BaseController {
   public function login()
   {
     $this->layout->content = View::make('login');
+  }
+
+  public function loginPOST()
+  {
+    $email = Input::get('email');
+    $password = Input::get('password');
+    $remember = Input::get('remember');
+    $credentials = array('email' => $email, 'password' => $password);
+
+    if (Auth::validate($credentials)) {
+      Auth::attempt($credentials, $remember);
+
+      return Redirect::intended('/');
+    }
+
+    return Redirect::intended('/login')->withInput();
   }
 
   public function logout()

@@ -7,11 +7,15 @@
   {{ Form::open(array('url' => '/login','class' => 'loginform')) }}
     <div>
       <label>Email Address</label><br>
-      {{ Form::email('email') }}
+      {{ Form::email('email', Input::old('email'), array('autocomplete' => 'off')) }}
     </div>
     <div>
       <label>Password</label><br>
       {{ Form::password('password') }}
+    </div>
+    <div>
+      <label>Remember Me?</label><br>
+      {{ Form::checkbox('remember', 'remember', false) }}
     </div>
 
     <div>{{ Form::submit('Login') }}</div>

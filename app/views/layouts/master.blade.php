@@ -22,8 +22,9 @@
           <a class="navbar-brand" href="/">Paste Something</a>
           <ul class="nav navbar-nav">
             <li><a href="/recent">Recent Pastes</a></li>
-            @if (Auth::check())
+            @if ($loggedIn)
               <li><a href="/logout">Logout</a></li>
+              <li><a href="/user/{{{ $user->id }}}">{{{ $user->email }}}</a></li>
             @else
               <li><a href="/login">Login</a></li>
               <li><a href="/register">Register</a></li>

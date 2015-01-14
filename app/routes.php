@@ -20,7 +20,8 @@ Route::get('/paste/{id}', 'PastesController@show');
 Route::post('/new', 'PastesController@create');
 
 Route::get('/login', 'UsersController@login');
+Route::post('/login', 'UsersController@loginPOST');
 Route::get('/logout', 'UsersController@logout');
 Route::get('/register', 'UsersController@register');
-Route::post('/register', 'UsersController@create');
+Route::post('/register', 'UsersController@registerPOST');
 Route::get('/users/{id}', 'UsersController@editUser');

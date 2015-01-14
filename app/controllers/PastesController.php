@@ -19,7 +19,9 @@ class PastesController extends BaseController {
 	public function index()
 	{
 		$pastes = Paste::orderBy('created_at','desc')->take(5)->get();
-		$this->layout->content = View::make('index',array('pastes' => $pastes));
+    $loggedInUser = Auth::user();
+
+		$this->layout->content = View::make('index',array('pastes' => $pastes, 'user' => $loggedInUser));
 	}
 	public function show($id)
 	{
@@ -42,9 +44,9 @@ class PastesController extends BaseController {
 			$status = 'update';
 			$paste = Paste::find(Input::get('id'));
 		} else {
-			$paste = new Paste;	
+			$paste = new Paste;
 		}
-		
+
 		$paste->title = Input::get('title');
 		$paste->content = Input::get('content');
 		$paste->syntax = Input::get('syntax');
@@ -52,9 +54,9 @@ class PastesController extends BaseController {
 
 		if (Request::ajax())
 		{
-			return Response::json(array('id' => $paste->id, 'url' => '/paste/'.$paste->id, 'title' => $paste->title, 'status' => $status));  
+			return Response::json(array('id' => $paste->id, 'url' => '/paste/'.$paste->id, 'title' => $paste->title, 'status' => $status));
 		}
-		
+
 		return Redirect::to('/paste/'.$paste->id);
 	}
 
