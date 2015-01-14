@@ -22,12 +22,18 @@
           <a class="navbar-brand" href="/">Paste Something</a>
           <ul class="nav navbar-nav">
             <li><a href="/recent">Recent Pastes</a></li>
+            @if (Auth::check())
+              <li><a href="/logout">Logout</a></li>
+            @else
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Register</a></li>
+            @endif
           </ul>
         </div>
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-      
+
       <div class="main row">
         <div class="content col-xs-8">
           @yield('content')

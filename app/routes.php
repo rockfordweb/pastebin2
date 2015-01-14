@@ -19,6 +19,8 @@ Route::get('/paste/{id}', 'PastesController@show');
 
 Route::post('/new', 'PastesController@create');
 
+Route::get('/login', 'UsersController@login');
+Route::get('/logout', 'UsersController@logout');
 Route::get('/register', 'UsersController@register');
-Route::post('/users/new', 'UsersController@create');
-Route::get('/users/{id}', 'UsersController@show');
+Route::post('/register', 'UsersController@create');
+Route::get('/users/{id}', 'UsersController@editUser');
