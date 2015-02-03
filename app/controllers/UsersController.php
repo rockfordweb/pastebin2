@@ -50,7 +50,7 @@ class UsersController extends BaseController {
     $credentials = array('email' => $email, 'password' => $password);
 
     if (Auth::validate($credentials)) {
-      Auth::attempt($credentials, $remember);
+      Auth::attempt($credentials, (Input::get('remember') == 1) ? true : false);
 
       return Redirect::intended('/');
     }

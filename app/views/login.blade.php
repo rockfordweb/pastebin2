@@ -15,7 +15,7 @@
     </div>
     <div>
       <label>Remember Me?</label><br>
-      {{ Form::checkbox('remember', 'remember', false) }}
+      {{ Form::checkbox('remember', (1 or true), false) }}
     </div>
 
     <div>{{ Form::submit('Login') }}</div>
