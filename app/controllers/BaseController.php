@@ -13,8 +13,20 @@ class BaseController extends Controller {
 		{
 			$this->layout = View::make($this->layout);
 
-      View::share('loggedIn', Auth::check());
-      View::share('user', Auth::user());
+		$recentPastes = Paste::orderBy('created_at','desc')->take(5)->get();
+
+		$authCheckResult = Auth::check();
+    	
+    	if ($authCheckResult) {
+    		$loggedInUser = Auth::user();
+    		$userPastes = $loggedInUser->pastes;
+
+    		View::share('userPastes', $userPastes);
+    		View::share('user', $loggedInUser);
+    	}
+    	
+      View::share('loggedIn', $authCheckResult);
+      View::share('pastes', $recentPastes);
 		}
 	}
 

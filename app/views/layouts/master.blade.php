@@ -12,8 +12,13 @@
     {{HTML::style('/css/style.css')}}
   </head>
   <body>
+    @if (Session::has('message') || Session::has('error'))
+      <div class="alert alert-dismissable alert-success">
+        <span>{{ Session::get('message') }}{{ Session::get('error') }}</span>
+        <button data-dismiss="alert"></button>
+      </div>
+    @endif
     <div class="alert-container">
-
     </div>
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
@@ -24,7 +29,7 @@
             <li><a href="/recent">Recent Pastes</a></li>
             @if ($loggedIn)
               <li><a href="/logout">Logout</a></li>
-              <li><a href="/user/{{{ $user->id }}}">{{{ $user->email }}}</a></li>
+              <li><a href="/users/{{{ $user->id }}}">{{{ $user->email }}}</a></li>
             @else
               <li><a href="/login">Login</a></li>
               <li><a href="/register">Register</a></li>

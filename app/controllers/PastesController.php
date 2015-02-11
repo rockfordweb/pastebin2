@@ -18,24 +18,21 @@ class PastesController extends BaseController {
 
 	public function index()
 	{
-		$pastes = Paste::orderBy('created_at','desc')->take(5)->get();
-    $loggedInUser = Auth::user();
 
-		$this->layout->content = View::make('index',array('pastes' => $pastes, 'user' => $loggedInUser));
+		$this->layout->content = View::make('index');
 	}
 	public function show($id)
 	{
-		$pastes = Paste::orderBy('created_at','desc')->take(5)->get();
+		
 		$paste = Paste::find($id);
 
 	    $this->layout->content = View::make('show',array(
-	      'paste' => $paste,
-	      'pastes' => $pastes
+	      'paste' => $paste
 	    ));
 	}
   public function recent() {
-		$pastes = Paste::orderBy('created_at','desc')->take(20)->get();
-		$this->layout->content = View::make('recent',array('pastes' => $pastes));
+		
+		$this->layout->content = View::make('recent');
   }
 	public function create()
 	{
@@ -50,6 +47,9 @@ class PastesController extends BaseController {
 		$paste->title = Input::get('title');
 		$paste->content = Input::get('content');
 		$paste->syntax = Input::get('syntax');
+		if (Auth::check()) {
+			$paste->user_id = Auth::id();	
+		} //else default in sql column
 		$paste->save();
 
 		if (Request::ajax())

@@ -71,4 +71,26 @@ class UsersController extends BaseController {
   {
     $this->layout->content = View::make('editUser');
   }
+
+  public function updateUser() {
+    $id = Input::get('id');
+    $user = User::find($id);
+    if (Auth::user()->id == $user->id) {
+
+      if (Hash::check(Input::get('old_password'),$user->password)) {
+          if (Input::get('password') == Input::get('password_confirm')) {
+            $user->password = Hash::make(Input::get('password'));
+            $user->save();
+            return Redirect::to('/')->with('message','Right.');
+          } else {
+            return Redirect::back()->with('error','Password doesn\'t match.');
+          }
+      } else {
+        return Redirect::back()->with('error','Old password doesn\'t match.');
+      } 
+    } else {
+      return Redirect::to('/')->with('error','Yer not allowed.');
+    }
+    
+  }
 }

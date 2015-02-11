@@ -25,3 +25,4 @@ Route::get('/logout', 'UsersController@logout');
 Route::get('/register', 'UsersController@register');
 Route::post('/register', 'UsersController@registerPOST');
 Route::get('/users/{id}', 'UsersController@editUser');
+Route::post('/users/update', 'UsersController@updateUser');

@@ -2,25 +2,24 @@
 
 @section('content')
 
-  <h2>Create a paste!</h2>
+  <h2>¡Change password!</h2>
   <div>
-  {{ Form::open(array('url' => '/new','class' => 'pasteform')) }}
+  {{ Form::open(array('url' => '/users/update','class' => 'passwordform')) }}
     <div>
-      <label>Title</label><br>
-      {{ Form::text('title') }}
+      <label>Password</label><br>
+      {{ Form::password('password') }}
     </div>
     <div>
-      <label>Content</label><br>
-      {{ Form::textarea('content') }}
+      <label>Confirm password</label><br>
+      {{ Form::password('password_confirm') }}
     </div>
     <div>
-      <label>Syntax</label><br>
-      {{ Form::select('syntax', array('php' => 'PHP', 'javascript' => 'JavaScript', 'css' => 'CSS')) }}
+      <label>Current password</label><br>
+      {{ Form::password('old_password') }}
     </div>
+    {{ Form::hidden('id',$user->id)}}
 
     <br><br>
-
-    {{ Form::hidden('id')}}
     <div>{{ Form::submit('Save') }}</div>
   {{ Form::close() }}
   </div>

@@ -22,10 +22,11 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
+			'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock', /* used for MAMP */
 			'host'      => 'localhost',
 			'database'  => 'pastebin',
-			'username'  => 'pastebin',
-			'password'  => 'pastebin',
+			'username'  => 'root',
+			'password'  => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
