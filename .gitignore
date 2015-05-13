@@ -10,3 +10,7 @@ Thumbs.db
 /public/bower_components
 /config/local/
 /config/database.php
+/node_modules
+/public/script.js
+/public/script.min.js
+/public/css

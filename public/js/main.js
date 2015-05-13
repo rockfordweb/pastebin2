@@ -19,4 +19,4 @@ $(function() {
 
 var displayAlert = function(alertType, message) {
   var $alert = $('<div class="alert alert-' + alertType + ' alert-dismissable" role="alert"><button data-dismiss="alert">Dismiss</button>' + message + '</div>').appendTo('.alert-container');
-}
+};

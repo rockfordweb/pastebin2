@@ -10,10 +10,16 @@ Requirements:
 
 - database and credentials to match app/config/local/database.php
 
+- npm install
 - composer update
 - bower install
 - bower install boostrap -S (make sure the bower_components folder is in /public/)
 - php artisan migrate
+- grunt develop
+
+
+Run `grunt develop` to start the watcher. Watcher will pay attention to `/public/less/style.less`, `/public/js/main.js`, and `Gruntfile.js` and do things with them.
+
 
 Form
 Edit Form

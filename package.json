@@ -1,0 +1,33 @@
+{
+  "name": "pastebin2",
+  "version": "1.0.0",
+  "description": "Our cool PasteBin clone!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rockfordweb/pastebin2.git"
+  },
+  "keywords": [
+    "pastebin",
+    "awesomesauce"
+  ],
+  "author": "Rockford Web Devs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rockfordweb/pastebin2/issues"
+  },
+  "homepage": "https://github.com/rockfordweb/pastebin2",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^3.1.0"
+  }
+}

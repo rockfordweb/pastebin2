@@ -8,7 +8,7 @@
     <title>Pastebin Clones!</title>
 
     {{HTML::style('/bower_components/bootstrap/dist/css/bootstrap.min.css')}}
-    {{HTML::style('/bower_components/prism/themes/prism-funky.css')}}
+    {{HTML::style('/bower_components/prism/themes/prism-okaidia.css')}}
     {{HTML::style('/css/style.css')}}
   </head>
   <body>
@@ -50,9 +50,6 @@
       </div>
     </div>
 
-    {{HTML::script('/bower_components/jquery/dist/jquery.min.js')}}
-    {{HTML::script('/bower_components/bootstrap/dist/js/bootstrap.min.js')}}
-    {{HTML::script('/bower_components/prism/prism.js')}}
-    {{HTML::script('/js/main.js')}}
+    {{HTML::script('/script.min.js')}}
   </body>
 </html>
